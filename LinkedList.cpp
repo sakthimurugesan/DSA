@@ -23,6 +23,7 @@ void insert(int value)
         head = newnode;
     }
 }
+//newline added
 void deletionAtEnd()
 {
     struct Node *ptr = new Node();
