@@ -24,6 +24,8 @@ void insert(int value)
     }
 }
 //newline added
+
+//remove one line
 void deletionAtEnd()
 {
     struct Node *ptr = new Node();
