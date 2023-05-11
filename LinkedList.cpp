@@ -4,7 +4,6 @@ using namespace std;
 struct Node{
     int data;
     struct Node *next;
-    //struct Node *prev; || doubly linked list
 };
 
 struct Node *head = NULL;
@@ -16,6 +15,7 @@ void insert(int value)
     if (head == NULL)
     {
         newnode -> next = NULL;
+        head = newnode;
     }
     else
     {
@@ -23,26 +23,6 @@ void insert(int value)
         head = newnode;
     }
 }
-//newline added
-
-//remove one line
-void deletionAtEnd()
-{
-    struct Node *ptr = new Node();
-    ptr = head;
-    struct Node *tail  = new Node();
-    tail=head->next;
-    while(tail->next!=NULL)
-    {
-       ptr=tail;
-       tail=tail->next;
-    }
-    tr->next=0;
-    delete tail;
-
-    
-}
-
 void display() {
    struct Node* ptr;
    ptr = head;
@@ -52,15 +32,16 @@ void display() {
    }
 }
 int main() {
-   insert(3);
-   insert(1);
-   insert(7);
-   insert(2);
-   insert(9);
+  cout<<"Enter number of the list elements: ";
+  int n,ele ; 
+  cin>>n;
+  for(int i = 0 ; i<n ; i++)
+  {
+    cin>>ele;
+    insert(ele);
+  }
+
    cout<<"The linked list is: ";
-   display();
-   cout<<endl;
-   deletionAtEnd();
    display();
    return 0;
 }
