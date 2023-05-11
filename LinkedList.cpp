@@ -37,7 +37,7 @@ void deletionAtEnd()
        ptr=tail;
        tail=tail->next;
     }
-    tr->next=0;
+    ptr->next=0;
     delete tail;
 
     
