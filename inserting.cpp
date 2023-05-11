@@ -28,7 +28,7 @@ void insertAtEnd(int value)
         temp->next = newnode;
     }
 }
-detetAtBegin()
+void detetAtBegin()
 {
     struct Node *ptr = new Node();
     ptr = head;

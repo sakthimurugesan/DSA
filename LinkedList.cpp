@@ -23,7 +23,6 @@ void insert(int value)
         head = newnode;
     }
 }
-<<<<<<< HEAD
 //newline added
 
 //remove one line
@@ -44,8 +43,6 @@ void deletionAtEnd()
     
 }
 
-=======
->>>>>>> 44f13620a30adb702b7482eba6335b65a1e8180d
 void display() {
    struct Node* ptr;
    ptr = head;

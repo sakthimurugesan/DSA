@@ -28,5 +28,5 @@ int main()
 {
     struct Node *root;
     root = NULL;
-    root = creat();
+    root = create();
 }
