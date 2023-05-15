@@ -6,7 +6,7 @@ struct Node{
     struct Node *next;
 }
 ;
-struct Node *front = NULL;
+Node *front = NULL;
 struct Node *rear = NULL;
 
 void enqueue(int ele)

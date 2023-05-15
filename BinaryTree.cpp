@@ -17,16 +17,50 @@ struct Node* create()
     {
         return 0;
     }
-    cout<<"Left child Data for "<<x;
+    newnode->data=x;
+    cout<<"Left child Data for "<<x<<" ";
     newnode->left = create();
-    cout<<"\nRight child Data for "<<x;
+    cout<<"\nRight child Data for "<<x<<" ";
     newnode->right = create();
     return newnode;
 }
+void postOrder(struct Node *root)
+{
+    if(root==0){
+        return;
+    }
+    postOrder(root->left);
+    postOrder(root->right);
+    cout<<root->data<<" ";
+}
+void preOrder(struct Node *root)
+{
+     if(root==0){
+        return;
+    }
+    cout<<root->data<<" ";
+    preOrder(root->left);
+    preOrder(root->right);
+}
+void inOrder(struct Node *root)
+{
+     if(root==0){
+        return;
+    }
+    preOrder(root->left);
+    cout<<root->data<<" ";
+    preOrder(root->right);
+}
+
+
 
 int main()
 {
     struct Node *root;
     root = NULL;
     root = create();
+    preOrder(root);cout<<endl;
+    postOrder(root);cout<<endl;
+    inOrder(root);cout<<endl;
+
 }
