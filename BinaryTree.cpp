@@ -1,4 +1,5 @@
 #include <iostream>
+#include <queue>
 using namespace std;
 
 struct Node
@@ -54,7 +55,38 @@ void inOrder(struct Node *root)
     cout << root->data << " ";
     preOrder(root->right);
 }
+/*
+Node* insertBreadthWise(Node* root, int data) {
+    if (root == nullptr) {
+        root = createNode(data);
+        return root;
+    }
 
+    queue<Node*> q;
+    q.push(root);
+
+    while (!q.empty()) {
+        Node* current = q.front();
+        q.pop();
+
+        if (current->left == nullptr) {
+            current->left = createNode(data);
+            return root;
+        } else {
+            q.push(current->left);
+        }
+
+        if (current->right == nullptr) {
+            current->right = createNode(data);
+            return root;
+        } else {
+            q.push(current->right);
+        }
+    }
+
+    return root;
+}
+*/
 int main()
 {
     struct Node *root;

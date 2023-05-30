@@ -1,4 +1,5 @@
 #include <iostream>
+#include <queue>
 
 using namespace std;
 
@@ -40,7 +41,34 @@ void inorderDisplay(TreeNode *node)
     cout << node->val << " ";
     inorderDisplay(node->right);
 }
-
+void depth(TreeNode *root)
+{
+    int d=0;
+    queue<TreeNode *> q;
+    q.push(root);
+    q.push(NULL);
+    while (!q.empty())
+    {
+        TreeNode *temp = q.front();
+        q.pop();
+        if (temp == NULL)
+        {
+            d++;
+        }
+        if (temp != NULL)
+        {
+            if (temp->left)
+                q.push(temp->left);
+            if (temp->right)
+                q.push(temp->right);
+        }
+        else if (!q.empty())
+        {
+            q.push(NULL);
+        }
+    }
+    cout<<d+1;
+}
 int main()
 {
     TreeNode *root = NULL;
@@ -59,7 +87,7 @@ int main()
         root = insert(root, val);
     }
 
-    inorderDisplay(root);
-
+    //inorderDisplay(root);
+    depth(root);
     return 0;
 }
